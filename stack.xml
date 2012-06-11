@@ -4,7 +4,7 @@
     openni_tracker broadcasts the OpenNI skeleton frames using tf.
 
   </description>
-  <author>Tim Field</author>
+  <author>Maintained by Vincent Rabaud vrabaud@willowgarage.com</author>
   <license>BSD</license>  
   <review status="unreviewed" notes=""/>
   <version>0.1.0</version>
