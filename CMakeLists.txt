@@ -6,6 +6,10 @@ rosbuild_make_distribution(0.1.1)
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 
-include_directories(/usr/include/openni /usr/include/nite)
+include(FindPkgConfig)
+pkg_check_modules(OPENNI libopenni)
+
+
+include_directories(${OPENNI_INCLUDEDIR} /usr/include/nite)
 rosbuild_add_executable(openni_tracker src/openni_tracker.cpp)
-target_link_libraries(openni_tracker OpenNI)
+target_link_libraries(openni_tracker ${OPENNI_LIBRARIES})
