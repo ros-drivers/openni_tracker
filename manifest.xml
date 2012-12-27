@@ -15,7 +15,7 @@
   <depend package="roslib"/>
   <depend package="tf"/>
 
-  <rosdep name="openni-dev"/>
-  <rosdep name="nite-dev"/>
-  <rosdep name="ps-engine"/>
+  <rosdep name="libopenni-dev"/>
+  <rosdep name="libopenni-nite-dev"/>
+  <rosdep name="libopenni-sensor-primesense-dev"/>
 </package>
