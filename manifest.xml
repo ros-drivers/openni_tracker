@@ -1,0 +1,22 @@
+<package>
+  <description brief="OpenNI skeleton tracker">
+
+    openni_tracker broadcasts the OpenNI skeleton frames using tf.
+
+  </description>
+  <author>Tim Field</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/openni_tracker</url>
+
+  <depend package="geometry_msgs"/>
+  <depend package="kdl"/>
+  <depend package="roscpp"/>
+  <depend package="roslib"/>
+  <depend package="tf"/>
+
+  <rosdep name="libopenni-dev"/>
+  <rosdep name="libusb-1.0-dev" />
+  <rosdep name="libopenni-nite-dev"/>
+  <rosdep name="libopenni-sensor-primesense-dev"/>
+</package>

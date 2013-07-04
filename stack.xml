@@ -1,0 +1,19 @@
+<stack>
+  <description brief="OpenNI skeleton tracker">
+
+    openni_tracker broadcasts the OpenNI skeleton frames using tf.
+
+  </description>
+  <author>Maintained by Vincent Rabaud vrabaud@willowgarage.com</author>
+  <license>BSD</license>  
+  <review status="unreviewed" notes=""/>
+  <version>0.1.0</version>
+  <url>http://ros.org/wiki/openni_tracker</url>
+
+  <depend stack="common_msgs" /> <!-- geometry_msgs -->
+  <depend stack="geometry" /> <!-- tf -->
+  <depend stack="orocos_kinematics_dynamics" /> <!-- kdl -->
+  <depend stack="ros" /> <!-- roslib -->
+  <depend stack="ros_comm" /> <!-- roscpp -->
+  
+</stack>
