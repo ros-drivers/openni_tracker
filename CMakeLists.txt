@@ -1,15 +1,18 @@
-cmake_minimum_required(VERSION 2.4.6)
-include($ENV{ROS_ROOT}/core/rosbuild/rosbuild.cmake)
+cmake_minimum_required(VERSION 2.8.3)
+project(openni_tracker)
+#include(FindPkgConfig)
+find_package(catkin REQUIRED COMPONENTS geometry_msgs
+					kdl
+					roscpp
+					tf)
+find_package(PkgConfig)
+pkg_check_modules(OpenNI libopenni)
 
-rosbuild_init()
-rosbuild_make_distribution(0.1.3)
+catkin_package()
 
-set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
+include_directories(${catkin_INCLUDEDIR} ${OPENNI_INCLUDEDIR} /usr/include/nite)
+add_executable(openni_tracker src/openni_tracker.cpp)
+target_link_libraries(openni_tracker ${catkin_LIBRARIES} ${OpenNI_LIBRARIES})
 
-include(FindPkgConfig)
-pkg_check_modules(OPENNI libopenni)
-
-
-include_directories(${OPENNI_INCLUDEDIR} /usr/include/nite)
-rosbuild_add_executable(openni_tracker src/openni_tracker.cpp)
-target_link_libraries(openni_tracker ${OPENNI_LIBRARIES})
+install(TARGETS openni_tracker RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+install(FILES openni_tracker.xml DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
