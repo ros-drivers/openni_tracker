@@ -15,9 +15,9 @@
   <build_depend>libopenni-nite-dev</build_depend>
   <build_depend>libopenni-sensor-primesense-dev</build_depend>
   <build_depend>geometry_msgs</build_depend>
-  <build_depend>kdl</build_depend>
+  <build_depend>orocos_kdl</build_depend>
   <build_depend>roscpp</build_depend>
-<!--  <build_depend>roslib<build_depend> -->
+  <build_depend>roslib</build_depend>
   <build_depend>tf</build_depend>
 
   <run_depend>libopenni-dev</run_depend>
@@ -25,8 +25,8 @@
   <run_depend>libopenni-nite-dev</run_depend>
   <run_depend>libopenni-sensor-primesense-dev</run_depend>
   <run_depend>geometry_msgs</run_depend>
-  <run_depend>kdl</run_depend>
+  <run_depend>orocos_kdl</run_depend>
   <run_depend>roscpp</run_depend>
-<!--  <run_depend>roslib<run_depend> -->
+  <run_depend>roslib</run_depend>
   <run_depend>tf</run_depend>
 </package>
