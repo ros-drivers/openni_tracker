@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 2.8.3)
+
 project(openni_tracker)
+
 find_package(orocos_kdl REQUIRED)
 find_package(catkin REQUIRED COMPONENTS geometry_msgs
 					roscpp
@@ -25,7 +27,12 @@ include_directories(${catkin_INCLUDEDIR}
 		    ${Nite_INCLUDEDIR}
 		    ${orocos_kdl_INCLUDE_DIRS})
 
+link_directories(${catkin_LIBRARY_DIRS})
+link_directories(${orocos_kdl_LIBRARY_DIRS})
+
 add_executable(openni_tracker src/openni_tracker.cpp)
+
+add_dependencies(openni_tracker geometry_msgs_gencpp)
 
 target_link_libraries(openni_tracker ${catkin_LIBRARIES}
 				     ${OpenNI_LIBRARIES}
