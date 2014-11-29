@@ -147,7 +147,10 @@ int main(int argc, char **argv) {
 	nRetVal = g_Context.FindExistingNode(XN_NODE_TYPE_USER, g_UserGenerator);
 	if (nRetVal != XN_STATUS_OK) {
 		nRetVal = g_UserGenerator.Create(g_Context);
-		CHECK_RC(nRetVal, "Find user generator");
+	    if (nRetVal != XN_STATUS_OK) {
+		    ROS_ERROR("NITE is likely missing: Please install NITE >= 1.5.2.21. Check the readme for download information. Error Info: User generator failed: %s", xnGetStatusString(nRetVal));
+            return nRetVal;
+	    }
 	}
 
 	if (!g_UserGenerator.IsCapabilitySupported(XN_CAPABILITY_SKELETON)) {
