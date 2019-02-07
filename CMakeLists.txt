@@ -22,8 +22,6 @@ link_directories(${orocos_kdl_LIBRARY_DIRS})
 
 add_executable(openni_tracker src/openni_tracker.cpp)
 
-add_dependencies(openni_tracker geometry_msgs_gencpp)
-
 target_link_libraries(openni_tracker ${catkin_LIBRARIES}
 				     ${OpenNI_LIBRARIES}
 				     ${orocos_kdl_LIBRARIES})
