@@ -13,7 +13,7 @@ pkg_check_modules(OpenNI REQUIRED libopenni)
 
 catkin_package()
 
-include_directories(${catkin_INCLUDEDIR}
+include_directories(${catkin_INCLUDE_DIRS}
 		    ${OpenNI_INCLUDEDIR}
 		    ${orocos_kdl_INCLUDE_DIRS})
 
